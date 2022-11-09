@@ -25,8 +25,34 @@ def get_listings_from_search_results(html_file):
         ('Loft in Mission District', 210, '1944564'),  # example
     ]
     """
-    pass
+    f= open(html_file,'r')
+    resp = f.read()
+    soup= BeautifulSoup(resp.content,'html.parser')
+    f.close()
 
+    tup_list = []
+
+    listing = soup.find_all('div', class_="t1jojoys dir dir-ltr")
+    cost = soup.find_all('span',class_="_tyxjp1")
+    id = soup.find_all('a',class_ = 'ln2bl2p dir dir-ltr')
+
+    title_list = []
+    cost_list = []
+    id_list= []
+
+    for title in listing:
+        t = str(listing)
+        title_list.append(t)   
+        c = int(cost)
+        cost_list.append(c)  
+        i = str(id)
+        id_list.append(i)  
+
+    
+    for x in range(len(title_list)):
+        tup = title_list[x], cost_list[x],  id_list= [x]
+        tup_list.append(tup)
+    return  tup_list
 
 def get_listing_information(listing_id):
     """
@@ -52,7 +78,7 @@ def get_listing_information(listing_id):
         number of bedrooms
     )
     """
-    pass
+    
 
 
 def get_detailed_listing_database(html_file):
