@@ -6,6 +6,10 @@ import os
 import csv
 import unittest
 
+# Your name: Zeinab Ghandour 
+# Your student id: 84727401
+# Your email: zghandou@umich.edu
+# List who you have worked with on this project: office hour
 
 def get_listings_from_search_results(html_file):
     """
