@@ -56,7 +56,7 @@ def get_listings_from_search_results(html_file):
 
     for x in ids:
         idd = x.text
-        idd_new = x['target'].split('listing_')[1] #change
+        idd_new = x['target'].split('listing_')[1] 
         id_list.append(idd_new) 
     #print (id_list)
 
@@ -144,7 +144,7 @@ def get_listing_information(listing_id):
     #print("room is:" , bed_num)
 
     tup_list= (policy_num, place_type,bed_num)
-   # print(tup_list)
+    #print(tup_list)
     return tup_list
 
 def get_detailed_listing_database(html_file):
@@ -172,7 +172,7 @@ def get_detailed_listing_database(html_file):
         new_l.append(x+second_set)
         #new_l.append(x + get_listing_information(x[2]))
     
-   # print(new_l)
+    #print(new_l)
 
     return new_l       
 
